@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - NewsAuth</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Detect Real or Fake News</h1>
+        <form action="/predict" method="post">
+            <label for="news-text">Enter the news text:</label><br>
+            <textarea id="news-text" name="news-text" required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        // Clear the text area when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('news-text').value = '';
+        });
+    </script>
+</body>
+</html>

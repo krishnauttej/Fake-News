@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response - NewsAuth</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4; /* Light gray background color */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            background-color: #fff; /* White background color */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .result {
+            font-size: 36px; /* Increase font size for result */
+            margin-top: 20px;
+            font-weight: bold; /* Bold text */
+           
+        }
+
+        .real {
+            color: green;
+        }
+
+        .fake {
+            color: red;
+        }
+
+        /* Style for go back link */
+        a {
+            color: #007bff; /* Blue color for links */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold; /* Bold text */
+            margin-top: 20px;
+            display: inline-block; /* Display as block element */
+        }
+
+        /* Style for hover effect on go back link */
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="result">
+            <p>This news is:</p>
+            <p class="{% if result == 'real' %}real{% else %}fake{% endif %}">{{ result|upper }}</p> <!-- Convert to uppercase using Jinja2 -->
+        </div>
+        <a href="/">Detect Again</a>
+    </div>
+</body>
+
+</html>
